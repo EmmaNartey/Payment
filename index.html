@@ -55,25 +55,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<form>
 									<div class="tab-for">				
 										<h5>EMAIL ADDRESS</h5>
-											<input type="text" value="email">
+											<input type="text" id="email" value="email">
 										<h5>FIRST NAME</h5>													
-											<input type="text" value="first name">
+											<input type="text" value="first name" id="name">
 										<h5>SELET CURRENCY</h5>													
-											<select id="form_need" name="need" class="form-control" required="required" data-error="Please specify your need.">
-												<option value="">NGN</option>
-												<option value="">USD</option>
+											<select id="currency" name="need" class="form-control" required="required" data-error="Please specify your need.">
+												<option value="NGN">NGN</option>
+												<option value="USD">USD</option>
 												<option value="">EUR</option>
 												<option value="">GBP</option>
 												<option value="">UGX</option>
 												<option value="">TZX</option>
-												<option value="">GHS</option>
+												<option value="GHS">GHS</option>
 												<option value="">KES</option>
 												<option value="">ZAR</option>
 											</select>
 										<h5>AMOUNT</h5>													
-											<input type="text" value="amount">
+											<input type="text" value="amount" id="amount">
 									</div>
-									<button type="button" onClick="payWithRave()">Pay Now</button>			
+									<button type="button" onClick="initializePayment()">Pay Now</button>
 								</form>
 								<div class="single-bottom">
 									<ul>

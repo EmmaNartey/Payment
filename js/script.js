@@ -1,13 +1,30 @@
 const API_publicKey = "FLWPUBK-24b72aebb821aea177483039677df9d3-X";
 
-    function payWithRave() {
+    function initializePayment(){
+
+        const payload = {
+            email: $('#email').val(),
+            amount: $('#amount').val(),
+            currency: $('#currency').val(),
+            // phone: $('#phone').val()
+        };
+
+        // Data validation here?
+
+        // Process payment with rave
+        payWithRave(payload);
+    }
+
+
+    function payWithRave(payload) {
+
         var x = getpaidSetup({
             PBFPubKey: API_publicKey,
-            customer_email: "user@example.com",
-            amount: 2000,
-            customer_phone: "234099940409",
-            currency: "NGN",
-            payment_options: "card",
+            customer_email: payload.email,
+            amount: payload.amount,
+            customer_phone: '0200338811',//payload.phone,
+            currency: payload.currency,
+            payment_method: "both",
             txref: "rave-123456",
             meta: [{
                 metaname: "flightID",
